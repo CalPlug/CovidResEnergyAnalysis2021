@@ -1,0 +1,53 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="14"/>
+        <last_saved_by value="Easy_Data_Transform_v1_7_0_on_Windows_10_10_0_at_2020_08_18_10_24_00"/>
+        <locale value="en_GB"/>
+        <id value="73030501327707090b71760108083801"/>
+        <snap_to_grid value="1"/>
+        <doc_path value="C%3A%5CUsers%5Candy%5CDesktop%5Csplitter.transform"/>
+    </meta>
+    <inputs>
+        <input trim="1" ignored_rows="0" watching="0" id="465" name="Clipboard" simplify="1" header="1" ignore_empty="1" encoding="Automatic" pos="-90^-45" delimiter="0" pos_v12="-90-45" text="a%2Cb%2Cc%0Aa1%2Cb1%2Cc1%0Aa2%2Cb2%2Cc2%0Aa3%2Cb3%2Cc3%0Aa4%2Cb4%2Cc4%0Aa5%2Cb5%2Cc5" json_arrays_as_rows="1"/>
+    </inputs>
+    <transforms>
+        <transform id="467" name="Row_Num" pos="149.4^-45" pos_v12="149.4-45">
+            <parameters>
+                <parameter type="8" name="Start_At" value="1"/>
+                <parameter type="8" name="Increment" value="1"/>
+                <parameter type="8" name="Every" value="1"/>
+            </parameters>
+        </transform>
+        <transform id="468" name="Filter" pos="388.8^-164.7" pos_v12="388.8-164.7">
+            <parameters>
+                <parameter type="3" name="Columns" value="11472"/>
+            </parameters>
+        </transform>
+        <transform id="469" name="Filter" pos="388.8^-45" pos_v12="388.8-45">
+            <parameters>
+                <parameter type="3" name="Columns" value="10442474"/>
+            </parameters>
+        </transform>
+        <transform id="470" name="Filter" pos="388.8^74.7" pos_v12="388.874.7">
+            <parameters>
+                <parameter type="3" name="Columns" value="11465"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="465" end_id="467"/>
+        <connection start_id="467" end_id="468"/>
+        <connection start_id="467" end_id="469"/>
+        <connection start_id="467" end_id="470"/>
+    </connections>
+    <batch_values>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%205-1-20.xlsx%5BSheet1%5D" row="2" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-17-20.xlsx%5BSheet1%5D" row="1" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-3-20.xlsx%5BSheet1%5D" row="0" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%205%201%2020.xlsx" row="2" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%2017%2020.xlsx" row="1" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%203%2020.xlsx" row="0" alias="IDC%20Payroll%20Register%204%203%2020"/>
+    </batch_values>
+</root>

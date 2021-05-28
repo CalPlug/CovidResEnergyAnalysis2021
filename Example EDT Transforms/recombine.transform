@@ -1,0 +1,54 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="22"/>
+        <last_saved_by value="Michael_Klopfer_using_Easy_Data_Transform_v1_11_0_on_Windows_10_10_0_at_2021_01_05_21_31_51"/>
+        <locale value="en_US"/>
+        <id value="7102050c337407000b7076010e083804"/>
+        <snap_to_grid value="1"/>
+        <notes/>
+        <doc_path value="C%3A%5CUsers%5CMike%20Klopfer%5CDesktop%5Crecombine.transform"/>
+    </meta>
+    <inputs>
+        <input pos="149.4^553.5" ignored_rows="0" show_meta="0" json_arrays_as_rows="1" delimiter="0" name="Clipboard" pos_v12="149.4553.5" watching="0" auto_fixed_widths="1" header="1" trim="1" file_type="0" id="454" text="US%20Presidents%0AJ.F.%20Kennedy%0AB.H.%20Obama%0AG.W.%20Bush%0AR.W.%20Regan" meta_text="%24%28CurrentDateTime%29" ignore_empty="1" encoding="Automatic" simplify="1"/>
+    </inputs>
+    <transforms>
+        <transform id="438" name="Extract" pos="628.2^673.2" comment="From%20start%20to%20whenever%20the%20name%20ends%2C%20assume%20terminate%20at%20null%20character" pos_v12="628.2673.2">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="8" name="Length" value="20"/>
+                <parameter type="6" name="From" value="Start"/>
+                <parameter type="8" name="Offset" value="4"/>
+            </parameters>
+        </transform>
+        <transform id="440" name="Extract" pos="628.2^553.5" pos_v12="628.2553.5">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="8" name="Length" value="4"/>
+                <parameter type="6" name="From" value="Start"/>
+                <parameter type="8" name="Offset" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="445" name="New_Col" pos="388.8^553.5" pos_v12="388.8553.5">
+            <parameters>
+                <parameter type="7" name="New_Name" value="Updated%20Name%20Format%29"/>
+                <parameter type="7" name="New_Value" value=""/>
+            </parameters>
+        </transform>
+        <transform id="455" name="Insert" pos="867.6^673.2" pos_v12="867.6673.2">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="7" name="Insert" value="%2C%20"/>
+                <parameter type="6" name="With" value="End"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="438" end_id="455"/>
+        <connection start_id="445" end_id="440"/>
+        <connection start_id="445" end_id="438"/>
+        <connection start_id="454" end_id="445"/>
+    </connections>
+    <batch_values/>
+</root>

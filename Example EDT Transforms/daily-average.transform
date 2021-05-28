@@ -1,0 +1,32 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="22"/>
+        <last_saved_by value="Easy_Data_Transform_v1_11_0_on_Windows_10_10_0_at_2020_12_08_10_22_56"/>
+        <locale value="en_US"/>
+        <id value="7c030501337807030a7176010e083801"/>
+        <snap_to_grid value="1"/>
+        <notes/>
+        <doc_path value="C%3A%5CUsers%5Candy%5CDesktop%5Cdaily-average.transform"/>
+    </meta>
+    <inputs>
+        <input worksheet="Easy%20Data%20Transform" pos="-90^74.7" ignored_rows="0" show_meta="0" json_arrays_as_rows="1" delimiter="0" name="data.xlsx%5BEasy%20Data%20Transform%5D" pos_v12="-9074.7" watching="0" auto_fixed_widths="1" path="C%3A%5CUsers%5Candy%5CDesktop%5Cdata.xlsx" header="1" trim="1" file_type="1" id="130" alias="data" meta_text="%24%28FilePath%29%20%24%28CurrentDateTime%29" ignore_empty="1" encoding="Automatic" simplify="1"/>
+    </inputs>
+    <transforms>
+        <transform id="131" name="Pivot" pos="149.4^74.7" pos_v12="149.474.7">
+            <parameters>
+                <parameter type="0" name="Rows" value="0"/>
+                <parameter type="0" name="Columns" value="1"/>
+                <parameter type="0" name="Sum" value="3"/>
+                <parameter type="6" name="Summarize_As" value="Average"/>
+                <parameter type="6" name="Non_Calc" value="Zero"/>
+                <parameter type="5" name="Totals" value="0"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="130" end_id="131"/>
+    </connections>
+    <batch_values/>
+</root>

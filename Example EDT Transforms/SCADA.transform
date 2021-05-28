@@ -1,0 +1,73 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="22"/>
+        <last_saved_by value="Easy_Data_Transform_v1_11_0_on_Windows_10_10_0_at_2020_12_04_10_35_24"/>
+        <locale value="en_US"/>
+        <id value="7602050d337707030a7176010f083806"/>
+        <snap_to_grid value="1"/>
+        <notes/>
+        <doc_path value="C%3A%5CUsers%5Candy%5CDesktop%5CEDT%20customer%20data%5Cmjk%5CSCADA.transform"/>
+    </meta>
+    <inputs>
+        <input worksheet="NPL" pos="-90^433.8" ignored_rows="0" show_meta="0" json_arrays_as_rows="1" delimiter="0" name="NPLEXAMPLE_12-2-20.xlsx%5BNPL%5D" pos_v12="-90433.8" watching="0" auto_fixed_widths="1" path="C%3A%5CUsers%5Candy%5CDesktop%5CEDT%20customer%20data%5Cmjk%5CNPLEXAMPLE_12-2-20.xlsx" header="1" trim="1" file_type="1" id="105" alias="NPLEXAMPLE_12-2-20" meta_text="%24%28FilePath%29%20%24%28CurrentDateTime%29" ignore_empty="1" encoding="Automatic" simplify="1"/>
+    </inputs>
+    <transforms>
+        <transform id="106" name="Gather" pos="149.4^433.8" pos_v12="149.4433.8">
+            <parameters>
+                <parameter type="1" name="Columns" value="2345678910111213141516171819202122232425"/>
+                <parameter type="7" name="Key_Column" value="hour"/>
+                <parameter type="7" name="Value_Column" value="Data"/>
+            </parameters>
+        </transform>
+        <transform id="108" name="Row_Num" pos="388.8^433.8" pos_v12="388.8433.8">
+            <parameters>
+                <parameter type="8" name="Start_At" value="0"/>
+                <parameter type="8" name="Increment" value="1"/>
+                <parameter type="8" name="Every" value="1"/>
+            </parameters>
+        </transform>
+        <transform id="109" name="Javascript" pos="628.2^433.8" pos_v12="628.2433.8">
+            <parameters>
+                <parameter type="7" name="New_Name" value="Hour"/>
+                <parameter type="12" name="Script" value="return%20%24%28Row%20Num%29%20%25%2024%3B"/>
+            </parameters>
+        </transform>
+        <transform id="110" name="Substitute" pos="867.6^433.8" pos_v12="867.6433.8">
+            <parameters>
+                <parameter type="7" name="New_Name" value="Timestamp"/>
+                <parameter type="12" name="Script" value="%24%28Date%29%20%24%28Hour%29%3A00"/>
+            </parameters>
+        </transform>
+        <transform id="111" name="Remove" pos="1107^433.8" pos_v12="1107433.8">
+            <parameters>
+                <parameter type="11" name="Columns" value="36"/>
+            </parameters>
+        </transform>
+        <transform id="112" name="Reorder" pos="-90^553.5" pos_v12="-90553.5">
+            <parameters>
+                <parameter type="4" name="Columns" value="21"/>
+            </parameters>
+        </transform>
+        <transform id="113" name="Num_Format" pos="149.4^553.5" pos_v12="149.4553.5">
+            <parameters>
+                <parameter type="1" name="Columns" value="2"/>
+                <parameter type="6" name="Format" value="f"/>
+                <parameter type="8" name="Precision" value="2"/>
+                <parameter type="5" name="Group_Separator" value="0"/>
+                <parameter type="6" name="Non_Numeric" value="Leave"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="105" end_id="106"/>
+        <connection start_id="106" end_id="108"/>
+        <connection start_id="108" end_id="109"/>
+        <connection start_id="109" end_id="110"/>
+        <connection start_id="110" end_id="111"/>
+        <connection start_id="111" end_id="112"/>
+        <connection start_id="112" end_id="113"/>
+    </connections>
+    <batch_values/>
+</root>

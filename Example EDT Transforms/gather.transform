@@ -1,0 +1,53 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="13"/>
+        <last_saved_by value="John_Doe_using_Easy_Data_Transform_v1_6_4_on_macOS_Mojave_10_14_at_2020_07_21_23_15_33"/>
+        <locale value="en_GB"/>
+        <snap_to_grid value="1"/>
+        <doc_path value="%2FUsers%2Fandybrice%2FDesktop%2Fgather.transform"/>
+    </meta>
+    <inputs>
+        <input trim="1" ignored_rows="0" watching="0" id="396" name="Clipboard" simplify="1" header="1" ignore_empty="1" encoding="Automatic" pos="-90^-45" delimiter="0" pos_v12="-90-45" text="date%2C1%2C2%2C3%0A1%2F1%2F2020%2C7%2C2%2C4%0A2%2F1%2F2020%2C1%2C5%2C7%0A3%2F1%2F2020%2C2%2C2%2C4" json_arrays_as_rows="1"/>
+    </inputs>
+    <transforms>
+        <transform id="399" name="Gather" pos="149.4^-45" pos_v12="149.4-45">
+            <parameters>
+                <parameter type="1" name="Columns" value="234"/>
+                <parameter type="7" name="Key_Column" value="hour"/>
+                <parameter type="7" name="Value_Column" value="data"/>
+            </parameters>
+        </transform>
+        <transform id="400" name="Substitute" pos="388.8^-45" pos_v12="388.8-45">
+            <parameters>
+                <parameter type="7" name="New_Name" value="datetime"/>
+                <parameter type="12" name="Script" value="%24%282%29%3A00%20%24%281%29"/>
+            </parameters>
+        </transform>
+        <transform id="401" name="Remove" pos="628.2^-45" pos_v12="628.2-45">
+            <parameters>
+                <parameter type="11" name="Columns" value="34"/>
+            </parameters>
+        </transform>
+        <transform id="402" name="Reorder" pos="867.6^-45" pos_v12="867.6-45">
+            <parameters>
+                <parameter type="4" name="Columns" value="21"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="396" end_id="399"/>
+        <connection start_id="399" end_id="400"/>
+        <connection start_id="400" end_id="401"/>
+        <connection start_id="401" end_id="402"/>
+    </connections>
+    <batch_values>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%203%2020.xlsx" row="0" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%2017%2020.xlsx" row="1" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%205-1-20.xlsx%5BSheet1%5D" row="2" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%205%201%2020.xlsx" row="2" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-17-20.xlsx%5BSheet1%5D" row="1" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-3-20.xlsx%5BSheet1%5D" row="0" alias="pay%20register%204-3-20"/>
+    </batch_values>
+</root>

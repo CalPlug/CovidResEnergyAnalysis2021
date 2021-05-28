@@ -1,0 +1,45 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="13"/>
+        <last_saved_by value="Andy_Brice_using_Easy_Data_Transform_v1_6_4_on_Windows_10_10_0_at_2020_07_23_23_38_14"/>
+        <locale value="en_GB"/>
+        <id value="7702050a317807060b7176010a083801"/>
+        <snap_to_grid value="1"/>
+        <doc_path value="C%3A%5CUsers%5Candy%5CDesktop%5Cmklopfer.transform"/>
+    </meta>
+    <inputs>
+        <input trim="1" ignored_rows="0" watching="0" id="53" name="Clipboard" simplify="1" header="1" ignore_empty="1" encoding="Automatic" pos="-90^-45" delimiter="0" pos_v12="-90-45" text="Datetime%09Measurement%20point%09Load%09Datetime%09Measurement%20point%09Load%0A1%2F1%2F2018%200%3A00%09DS-1-%20FDR%201-16%20KW%09440%091%2F1%2F2018%200%3A00%09DS-1-%20FDR%201-17%20KW%09900%0A1%2F1%2F2018%201%3A00%09DS-1-%20FDR%201-16%20KW%09400%091%2F1%2F2018%201%3A00%09DS-1-%20FDR%201-17%20KW%09850%0A1%2F1%2F2018%202%3A00%09DS-1-%20FDR%201-16%20KW%09380%091%2F1%2F2018%202%3A00%09DS-1-%20FDR%201-17%20KW%09830" json_arrays_as_rows="1"/>
+    </inputs>
+    <transforms>
+        <transform id="54" name="Remove" pos="149.4^-45" pos_v12="149.4-45">
+            <parameters>
+                <parameter type="11" name="Columns" value="123"/>
+            </parameters>
+        </transform>
+        <transform id="55" name="Remove" pos="149.4^74.7" pos_v12="149.474.7">
+            <parameters>
+                <parameter type="11" name="Columns" value="456"/>
+            </parameters>
+        </transform>
+        <transform id="56" name="Stack" pos="388.8^74.7" pos_v12="388.874.7">
+            <parameters>
+                <parameter type="6" name="Align_Cols" value="Column%20number"/>
+            </parameters>
+        </transform>
+        <transform id="57" name="Sort" pos="628.2^74.7" pos_v12="628.274.7">
+            <parameters>
+                <parameter type="2" name="Columns" value="1"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="53" end_id="54"/>
+        <connection start_id="53" end_id="55"/>
+        <connection start_id="54" end_id="56"/>
+        <connection start_id="55" end_id="56"/>
+        <connection start_id="56" end_id="57"/>
+    </connections>
+    <batch_values/>
+</root>

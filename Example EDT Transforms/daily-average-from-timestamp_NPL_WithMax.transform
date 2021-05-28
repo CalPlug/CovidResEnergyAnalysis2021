@@ -1,0 +1,205 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="23"/>
+        <last_saved_by value="Michael_Klopfer_using_Easy_Data_Transform_v1_11_3_on_Windows_10_10_0_at_2021_01_10_22_40_34"/>
+        <locale value="en_US"/>
+        <id value="74020509327307000b7076010e083808"/>
+        <snap_to_grid value="1"/>
+        <notes/>
+        <doc_path value="C%3A%5CUsers%5CMike%20Klopfer%5CDesktop%5Cdaily-average-from-timestamp_NPL_WithMax.transform"/>
+    </meta>
+    <inputs>
+        <input worksheet="Sheet1" pos="-329.4^-643.5" ignored_rows="8" show_meta="0" json_arrays_as_rows="1" delimiter="0" name="32-08Temp_regression.xlsx%5BSheet1%5D" pos_v12="-329.4-643.5" watching="0" auto_fixed_widths="1" path="G%3A%5CLADWP_COVID19_Project%5CFeeder%20Analysis%5CFeeder%20Breakdown%5CFeederAnalysis_Jan21_update%5CSummary%5C32-08Temp_regression.xlsx" header="1" trim="1" file_type="1" id="519" alias="Hr_temp" meta_text="%24%28FilePath%29%20%24%28CurrentDateTime%29" ignore_empty="1" encoding="Automatic" simplify="1"/>
+    </inputs>
+    <transforms>
+        <transform id="407" name="Rename_Cols" pos="149.4^-45" pos_v12="149.4-45">
+            <parameters>
+                <parameter type="13" name="RenameColumns" value="%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A%2ANORENAME%2A"/>
+            </parameters>
+        </transform>
+        <transform id="408" name="Pivot" pos="388.8^-284.4" pos_v12="388.8-284.4">
+            <parameters>
+                <parameter type="0" name="Rows" value="0"/>
+                <parameter type="0" name="Columns" value="1"/>
+                <parameter type="0" name="Sum" value="2"/>
+                <parameter type="6" name="Summarize_As" value="Average"/>
+                <parameter type="6" name="Non_Calc" value="Empty"/>
+                <parameter type="5" name="Totals" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="412" name="Date_Format" pos="-90^-523.8" pos_v12="-90-523.8">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="7" name="Input" value="MM%2Fdd%2Fyyyy"/>
+                <parameter type="7" name="Output" value="yyyy%2FMM%2Fdd"/>
+            </parameters>
+        </transform>
+        <transform id="413" name="Extract" pos="-329.4^-523.8" pos_v12="-329.4-523.8">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="8" name="Length" value="10"/>
+                <parameter type="6" name="From" value="Start"/>
+                <parameter type="8" name="Offset" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="471" name="Pivot" pos="388.8^74.7" pos_v12="388.874.7">
+            <parameters>
+                <parameter type="0" name="Rows" value="0"/>
+                <parameter type="0" name="Columns" value="1"/>
+                <parameter type="0" name="Sum" value="3"/>
+                <parameter type="6" name="Summarize_As" value="Standard%20deviation"/>
+                <parameter type="6" name="Non_Calc" value="Empty"/>
+                <parameter type="5" name="Totals" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="472" name="Join" pos="867.6^-164.7" pos_v12="867.6-164.7">
+            <parameters>
+                <parameter type="0" name="Column_1" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_1" value="0"/>
+                <parameter type="0" name="Column_2" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_2" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="473" name="Pivot" pos="388.8^-164.7" pos_v12="388.8-164.7">
+            <parameters>
+                <parameter type="0" name="Rows" value="0"/>
+                <parameter type="0" name="Columns" value="1"/>
+                <parameter type="0" name="Sum" value="3"/>
+                <parameter type="6" name="Summarize_As" value="Average"/>
+                <parameter type="6" name="Non_Calc" value="Empty"/>
+                <parameter type="5" name="Totals" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="476" name="Join" pos="1107^-284.4" pos_v12="1107-284.4">
+            <parameters>
+                <parameter type="0" name="Column_1" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_1" value="0"/>
+                <parameter type="0" name="Column_2" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_2" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="478" name="Pivot" pos="388.8^-45" pos_v12="388.8-45">
+            <parameters>
+                <parameter type="0" name="Rows" value="0"/>
+                <parameter type="0" name="Columns" value="1"/>
+                <parameter type="0" name="Sum" value="3"/>
+                <parameter type="6" name="Summarize_As" value="Maximum"/>
+                <parameter type="6" name="Non_Calc" value="Empty"/>
+                <parameter type="5" name="Totals" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="479" name="Join" pos="628.2^-45" pos_v12="628.2-45">
+            <parameters>
+                <parameter type="0" name="Column_1" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_1" value="0"/>
+                <parameter type="0" name="Column_2" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_2" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="480" name="Num_Format" pos="628.2^912.6" pos_v12="628.2912.6">
+            <parameters>
+                <parameter type="1" name="Columns" value="234567"/>
+                <parameter type="6" name="Format" value="f"/>
+                <parameter type="8" name="Precision" value="2"/>
+                <parameter type="5" name="Group_Separator" value="0"/>
+                <parameter type="6" name="Non_Numeric" value="Leave"/>
+            </parameters>
+        </transform>
+        <transform id="481" name="Pivot" pos="388.8^194.4" pos_v12="388.8194.4">
+            <parameters>
+                <parameter type="0" name="Rows" value="0"/>
+                <parameter type="0" name="Columns" value="1"/>
+                <parameter type="0" name="Sum" value="12"/>
+                <parameter type="6" name="Summarize_As" value="Average"/>
+                <parameter type="6" name="Non_Calc" value="Empty"/>
+                <parameter type="5" name="Totals" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="482" name="Join" pos="1346.4^-45" pos_v12="1346.4-45">
+            <parameters>
+                <parameter type="0" name="Column_1" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_1" value="0"/>
+                <parameter type="0" name="Column_2" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_2" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="483" name="Reorder" pos="867.6^912.6" pos_v12="867.6912.6">
+            <parameters>
+                <parameter type="4" name="Columns" value="1234567"/>
+            </parameters>
+        </transform>
+        <transform id="509" name="Javascript" pos="-329.4^-284.4" pos_v12="-329.4-284.4">
+            <parameters>
+                <parameter type="7" name="New_Name" value="DayType"/>
+                <parameter type="12" name="Script" value="var%20enable%20%3D%201%3B%20%2F%2FEnabled%20by%20default%0Avar%20is_weekend%20%3D%20%20function%28date1%29%7B%0Avar%20dt%20%3D%20new%20Date%28date1%29%3B%0A%20%20if%28%28dt.getDay%28%29%20%3D%3D%206%20%7C%7C%20dt.getDay%28%29%20%3D%3D%200%29%20%26%26%20enable%20%3D%3D%201%29%0A%20%20%20%20%20%7B%0A%20%20%20%20%20%20%2F%2Freturn%20%221%22%3B%0A%09%20%20return%20%22Weekend%22%3B%0A%20%20%20%20%20%20%7D%20else%0A%20%20%20%20%20%20%2F%2Freturn%20%220%22%3B%0A%20%20%09return%20%22Weekday%22%3B%0A%20%20%7D%0A%20%20%20if%20%28enable%20%3D%3D%201%29%7B%0A%20%20%20%20%20return%20%28is_weekend%28new%20Date%28%24%28DateTime%29%29%29%29%3B%0A%7D"/>
+            </parameters>
+        </transform>
+        <transform id="510" name="Filter" pos="-90^-284.4" comment="Change%20Scope%20of%20Calculation%20by%20changing%20Weekday%2C%20Weekend%2C%20and%20anyday" pos_v12="-90-284.4">
+            <parameters>
+                <parameter type="3" name="Columns" value="11200Weekend"/>
+            </parameters>
+        </transform>
+        <transform id="511" name="Pivot" pos="388.8^314.1" pos_v12="388.8314.1">
+            <parameters>
+                <parameter type="0" name="Rows" value="0"/>
+                <parameter type="0" name="Columns" value="1"/>
+                <parameter type="0" name="Sum" value="13"/>
+                <parameter type="6" name="Summarize_As" value="Average"/>
+                <parameter type="6" name="Non_Calc" value="Empty"/>
+                <parameter type="5" name="Totals" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="512" name="Join" pos="628.2^194.4" pos_v12="628.2194.4">
+            <parameters>
+                <parameter type="0" name="Column_1" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_1" value="0"/>
+                <parameter type="0" name="Column_2" value="1"/>
+                <parameter type="5" name="Include_Non_Matching_2" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="513" name="Sort" pos="388.8^912.6" pos_v12="388.8912.6">
+            <parameters>
+                <parameter type="2" name="Columns" value="1"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs>
+        <output excel_output="0" path="G%3A%5CLADWP_COVID19_Project%5CFeeder%20Analysis%5CFeeder%20Breakdown%5CFeederAnalysis_Jan21_update%5CSummary%5C32-08DailyAvg_Weekendy.xlsx" id="489" name="32-08DailyAvg_Weekendy.xlsx" overwrite_sheet="0" pos="1107^912.6" encoding="UTF-8" delimiter="1" pos_v12="1107912.6" bom="1" xml_root="root" xml_row="record" alias="output" file_type="1" enable_output="0"/>
+    </outputs>
+    <connections>
+        <connection start_id="407" end_id="408"/>
+        <connection start_id="407" end_id="471"/>
+        <connection start_id="407" end_id="473"/>
+        <connection start_id="407" end_id="478"/>
+        <connection start_id="407" end_id="481"/>
+        <connection start_id="407" end_id="511"/>
+        <connection start_id="408" end_id="476"/>
+        <connection start_id="412" end_id="509"/>
+        <connection start_id="413" end_id="412"/>
+        <connection start_id="471" end_id="479"/>
+        <connection start_id="472" end_id="476"/>
+        <connection start_id="473" end_id="472"/>
+        <connection start_id="476" end_id="482"/>
+        <connection start_id="478" end_id="479"/>
+        <connection start_id="479" end_id="472"/>
+        <connection start_id="480" end_id="483"/>
+        <connection start_id="481" end_id="512"/>
+        <connection start_id="482" end_id="513"/>
+        <connection start_id="483" end_id="489"/>
+        <connection start_id="509" end_id="510"/>
+        <connection start_id="510" end_id="407"/>
+        <connection start_id="511" end_id="512"/>
+        <connection start_id="512" end_id="482"/>
+        <connection start_id="513" end_id="480"/>
+        <connection start_id="519" end_id="413"/>
+    </connections>
+    <batch_values>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%205-1-20.xlsx%5BSheet1%5D" row="2" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-3-20.xlsx%5BSheet1%5D" row="0" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-17-20.xlsx%5BSheet1%5D" row="1" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%205%201%2020.xlsx" row="2" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%2017%2020.xlsx" row="1" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%203%2020.xlsx" row="0" alias="IDC%20Payroll%20Register%204%203%2020"/>
+    </batch_values>
+</root>

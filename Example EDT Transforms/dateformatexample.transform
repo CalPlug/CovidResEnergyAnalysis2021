@@ -1,0 +1,55 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="17"/>
+        <last_saved_by value="Michael_Klopfer_using_Easy_Data_Transform_v1_8_2_on_Windows_10_10_0_at_2021_01_06_10_31_06"/>
+        <locale value="en_US"/>
+        <id value="7302050f337607000b7076010e083806"/>
+        <snap_to_grid value="1"/>
+        <doc_path value="C%3A%5CUsers%5CMike%20Klopfer%5CDesktop%5Cdateformatexample.transform"/>
+    </meta>
+    <inputs>
+        <input trim="1" ignored_rows="0" watching="0" show_meta="0" id="58" name="Clipboard" simplify="1" header="1" ignore_empty="1" encoding="Automatic" pos="-329.4^-164.7" delimiter="0" pos_v12="-329.4-164.7" meta_text="%24%28CurrentDateTime%29" text="Timestamp%09Data%0A1%2F1%2F2020%200%3A00%092%2C262.86%0A1%2F19%2F2020%201%3A00%092%2C198.59%0A10%2F1%2F2020%202%3A00%092%2C154.43%0A12%2F1%2F2020%203%3A00%092%2C128.81%0A12%2F31%2F2020%204%3A00%092%2C136.73%0A1%2F1%2F2021%205%3A00%092%2C214.82" json_arrays_as_rows="1"/>
+        <input trim="1" ignored_rows="0" watching="0" show_meta="0" id="61" name="Clipboard" simplify="1" header="1" ignore_empty="1" encoding="Automatic" pos="-329.4^-45" delimiter="0" pos_v12="-329.4-45" meta_text="%24%28CurrentDateTime%29" text="Timestamp%09Data%0A1%2F1%2F2020%200%3A00%092%2C262.86%0A1%2F19%2F2020%201%3A00%092%2C198.59%0A10%2F1%2F2020%202%3A00%092%2C154.43%0A12%2F1%2F2020%203%3A00%092%2C128.81%0A12%2F31%2F2020%204%3A00%092%2C136.73%0A1%2F1%2F2021%205%3A00%092%2C214.82" json_arrays_as_rows="1"/>
+        <input trim="1" ignored_rows="0" watching="0" show_meta="0" id="467" name="Clipboard" simplify="1" header="1" ignore_empty="1" encoding="Automatic" pos="-329.4^74.7" delimiter="0" pos_v12="-329.474.7" meta_text="%24%28CurrentDateTime%29" text="Timestamp%2CData%0D%0A1%2F1%2F2020%200%3A00%2C%222%2C262.86%22%0D%0A1%2F19%2F2020%201%3A00%2C%222%2C198.59%22%0D%0A10%2F1%2F2020%202%3A00%2C%222%2C154.43%22%0D%0A12%2F1%2F2020%203%3A00%2C%222%2C128.81%22%0D%0A12%2F31%2F2020%204%3A00%2C%222%2C136.73%22%0D%0A1%2F1%2F2021%205%3A00%2C%222%2C214.82%22" json_arrays_as_rows="1"/>
+    </inputs>
+    <transforms>
+        <transform id="59" name="Date_Format" pos="-90^-164.7" pos_v12="-90-164.7">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="7" name="Input" value="d%20MM%20yyyy"/>
+                <parameter type="7" name="Output" value="yy%2FMM%2Fdd"/>
+            </parameters>
+        </transform>
+        <transform id="64" name="Extract" pos="-90^-45" pos_v12="-90-45">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="8" name="Length" value="10"/>
+                <parameter type="6" name="From" value="Start"/>
+                <parameter type="8" name="Offset" value="0"/>
+            </parameters>
+        </transform>
+        <transform id="65" name="Date_Format" pos="149.4^-45" pos_v12="149.4-45">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="7" name="Input" value="M%2Fd%2Fyyyy"/>
+                <parameter type="7" name="Output" value="yy%2FMM%2Fdd"/>
+            </parameters>
+        </transform>
+        <transform id="468" name="Date_Format" pos="-90^74.7" pos_v12="-9074.7">
+            <parameters>
+                <parameter type="1" name="Columns" value="1"/>
+                <parameter type="7" name="Input" value="M%2Fd%2Fyyyy"/>
+                <parameter type="7" name="Output" value="yy%2FMM%2Fdd"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="58" end_id="59"/>
+        <connection start_id="61" end_id="64"/>
+        <connection start_id="64" end_id="65"/>
+        <connection start_id="467" end_id="468"/>
+    </connections>
+    <batch_values/>
+</root>

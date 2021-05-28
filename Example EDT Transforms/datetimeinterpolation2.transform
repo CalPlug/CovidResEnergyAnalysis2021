@@ -1,0 +1,92 @@
+<!DOCTYPE EasyDataTransform>
+<root>
+    <meta>
+        <version value="22"/>
+        <last_saved_by value="Michael_Klopfer_using_Easy_Data_Transform_v1_11_0_on_Windows_10_10_0_at_2020_12_14_22_19_34"/>
+        <locale value="en_US"/>
+        <id value="7003050d327307030a7176010e083803"/>
+        <snap_to_grid value="1"/>
+        <notes/>
+        <doc_path value="C%3A%5CUsers%5CMike%20Klopfer%5CDownloads%5Cdatetimeinterpolation2.transform"/>
+    </meta>
+    <inputs>
+        <input worksheet="parallel_input" pos="-568.8^-523.8" ignored_rows="0" show_meta="0" json_arrays_as_rows="1" delimiter="0" name="interpolation_test_numeric.xlsx%5Bparallel_input%5D" pos_v12="-568.8-523.8" watching="0" auto_fixed_widths="1" path="C%3A%5CUsers%5CMike%20Klopfer%5CDownloads%5Cinterpolation_test_numeric.xlsx" header="1" trim="1" file_type="1" id="436" alias="interpolation_test_numeric" meta_text="%24%28FilePath%29%20%24%28CurrentDateTime%29" ignore_empty="1" encoding="Automatic" simplify="1"/>
+        <input worksheet="null_sensor_reference" pos="-568.8^-763.2" ignored_rows="0" show_meta="0" json_arrays_as_rows="1" delimiter="0" name="interpolation_test_numeric.xlsx%5Bnull_sensor_reference%5D" pos_v12="-568.8-763.2" watching="0" auto_fixed_widths="1" path="C%3A%5CUsers%5CMike%20Klopfer%5CDownloads%5Cinterpolation_test_numeric.xlsx" header="1" trim="1" file_type="1" id="437" alias="interpolation_test_numeric1" meta_text="%24%28FilePath%29%20%24%28CurrentDateTime%29" ignore_empty="1" encoding="Automatic" simplify="1"/>
+    </inputs>
+    <transforms>
+        <transform id="414" name="Javascript" pos="-329.4^-763.2" comment="Intent%3A%20calculate%20the%20diffence%20between%20a%20fixed%20reference%20to%20convert%20the%20datetime%20to%20an%20integer%20to%20use%20in%20interpolation" pos_v12="-329.4-763.2">
+            <parameters>
+                <parameter type="7" name="New_Name" value="NumericDatetime0"/>
+                <parameter type="12" name="Script" value="var%20offset%3D0%20%2F%2Foffset%20added%20in%20seconds%20to%20all%20points%20%28used%20to%20nudge%20times%20for%20alignment%20of%20first%20data%20point%20if%20required%29%0A%0Areturn%20%28%28new%20Date%28%24%28Null%20Sensor%20DateTime%29%29%20-%20new%20Date%28%221970-01-01%22%29%2B1000%2Aoffset%29%29"/>
+            </parameters>
+        </transform>
+        <transform id="416" name="Interpolate" pos="-90^-643.5" comment="Sensor%202%20is%20interpolated%20against%20the%20timebase%20of%20sensor%201%2C%20sensor%201%27s%20timebase%20is%20used%20as%20the%20common%20timebase%20along%20with%20the%20values%20from%20sensor%201%20and%20the%20interpolated%20values%20of%20sensor%202%20" pos_v12="-90-643.5">
+            <parameters>
+                <parameter type="0" name="Top_Sample_Column" value="3"/>
+                <parameter type="0" name="Bottom_Sample_Column" value="5"/>
+                <parameter type="0" name="Bottom_Value_Column" value="2"/>
+                <parameter type="6" name="Interpolation_Type" value="Linear"/>
+            </parameters>
+        </transform>
+        <transform id="419" name="Javascript" pos="-329.4^-523.8" comment="Intent%3A%20calculate%20the%20diffence%20between%20a%20fixed%20reference%20to%20convert%20the%20datetime%20to%20an%20integer%20to%20use%20in%20interpolation" pos_v12="-329.4-523.8">
+            <parameters>
+                <parameter type="7" name="New_Name" value="NumericDatetime1"/>
+                <parameter type="12" name="Script" value="var%20offset%3D0%20%2F%2Foffset%20added%20in%20seconds%20to%20all%20points%20%28used%20to%20nudge%20times%20for%20alignment%20of%20first%20data%20point%20if%20required%29%0A%0Areturn%20%28%28new%20Date%28%24%28Sensor1%20DateTime%29%29%20-%20new%20Date%28%221970-01-01%22%29%2B1000%2Aoffset%29%29"/>
+            </parameters>
+        </transform>
+        <transform id="443" name="Javascript" pos="-329.4^-284.4" comment="Intent%3A%20calculate%20the%20diffence%20between%20a%20fixed%20reference%20to%20convert%20the%20datetime%20to%20an%20integer%20to%20use%20in%20interpolation" pos_v12="-329.4-284.4">
+            <parameters>
+                <parameter type="7" name="New_Name" value="NumericDatetime2"/>
+                <parameter type="12" name="Script" value="var%20offset%3D0%20%2F%2Foffset%20added%20in%20seconds%20to%20all%20points%20%28used%20to%20nudge%20times%20for%20alignment%20of%20first%20data%20point%20if%20required%29%0A%0Areturn%20%28%28new%20Date%28%24%28Sensor2%20DateTime%29%29%20-%20new%20Date%28%221970-01-01%22%29%2B1000%2Aoffset%29%29"/>
+            </parameters>
+        </transform>
+        <transform id="444" name="Interpolate" pos="149.4^-523.8" comment="Sensor%202%20is%20interpolated%20against%20the%20timebase%20of%20sensor%201%2C%20sensor%201%27s%20timebase%20is%20used%20as%20the%20common%20timebase%20along%20with%20the%20values%20from%20sensor%201%20and%20the%20interpolated%20values%20of%20sensor%202%20" pos_v12="149.4-523.8">
+            <parameters>
+                <parameter type="0" name="Top_Sample_Column" value="3"/>
+                <parameter type="0" name="Bottom_Sample_Column" value="5"/>
+                <parameter type="0" name="Bottom_Value_Column" value="4"/>
+                <parameter type="6" name="Interpolation_Type" value="Linear"/>
+            </parameters>
+        </transform>
+        <transform id="445" name="Remove" pos="388.8^-523.8" pos_v12="388.8-523.8">
+            <parameters>
+                <parameter type="11" name="Columns" value="145"/>
+            </parameters>
+        </transform>
+        <transform id="446" name="Rename_Cols" pos="388.8^-284.4" pos_v12="388.8-284.4">
+            <parameters>
+                <parameter type="13" name="RenameColumns" value="DateTimeInterpolated%20Sensor1%20DataInterpolated%20Sensor2%20Data"/>
+            </parameters>
+        </transform>
+        <transform id="447" name="Num_Format" pos="628.2^-284.4" pos_v12="628.2-284.4">
+            <parameters>
+                <parameter type="1" name="Columns" value=""/>
+                <parameter type="6" name="Format" value="f"/>
+                <parameter type="8" name="Precision" value="3"/>
+                <parameter type="5" name="Group_Separator" value="0"/>
+                <parameter type="6" name="Non_Numeric" value="Leave"/>
+            </parameters>
+        </transform>
+    </transforms>
+    <outputs/>
+    <connections>
+        <connection start_id="414" end_id="416"/>
+        <connection start_id="416" end_id="444"/>
+        <connection start_id="419" end_id="416"/>
+        <connection start_id="436" end_id="419"/>
+        <connection start_id="436" end_id="443"/>
+        <connection start_id="437" end_id="414"/>
+        <connection start_id="443" end_id="444"/>
+        <connection start_id="444" end_id="445"/>
+        <connection start_id="445" end_id="446"/>
+        <connection start_id="446" end_id="447"/>
+    </connections>
+    <batch_values>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%203%2020.xlsx" row="0" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%204%2017%2020.xlsx" row="1" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Easy%20Data%20Transform%5CIDC%20Payroll%20Register%205%201%2020.xlsx" row="2" alias="IDC%20Payroll%20Register%204%203%2020"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-17-20.xlsx%5BSheet1%5D" row="1" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%204-3-20.xlsx%5BSheet1%5D" row="0" alias="pay%20register%204-3-20"/>
+        <batch_value value="C%3A%5CUsers%5CDVann%5COneDrive%5CVOH%20Munis%20ERP%5CPayroll%5CConversions%5CIDC%5CIDC%20Payroll%20Registers%5CAfter%20Able2Extract%5Cpay%20register%205-1-20.xlsx%5BSheet1%5D" row="2" alias="pay%20register%204-3-20"/>
+    </batch_values>
+</root>
